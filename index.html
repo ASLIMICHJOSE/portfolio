@@ -4,49 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Portfolio</title>
-  <style>
-    :root {
-      --bg:#0f1115;--card:#141821;--text:#e7e9ee;--muted:#9aa4b2;--brand:#00c3ff;--brand-2:#6a5acd;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,var(--bg),#0b0d11 60%,#0a0c10);color:var(--text)}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    /* Navbar */
-    header{position:sticky;top:0;z-index:50;background:rgba(15,17,21,.7);backdrop-filter:blur(10px);border-bottom:1px solid #1e2230}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .logo{font-weight:800;letter-spacing:.4px;background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:1.2rem}
-    .nav-links{display:flex;gap:18px}
-    .nav-links a{padding:8px 12px;border-radius:12px;color:var(--muted)}
-    .nav-links a:hover,.nav-links a.active{color:var(--text);background:#1a1f2b}
-    /* Hero */
-    .hero{min-height:78vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:-20%;background:radial-gradient(800px 400px at 50% -10%,rgba(0,195,255,.25),transparent 60%),radial-gradient(600px 300px at 80% 10%,rgba(106,90,205,.2),transparent 60%);filter:blur(10px);z-index:-1}
-    .hero h1{font-size:clamp(2rem,5vw,3.5rem);margin:0 0 10px}
-    .hero p{color:var(--muted);max-width:650px;margin:0 auto 22px;font-size:1.05rem}
-    .btn{display:inline-block;padding:12px 18px;border-radius:14px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:#fff;font-weight:700;transition:transform .15s ease}
-    .btn:hover{transform:translateY(-1px)}
-    /* Sections */
-    section{padding:72px 0;border-top:1px solid #1b2030}
-    h2{font-size:1.8rem;margin:0 0 14px}
-    .muted{color:var(--muted)}
-    /* Cards */
-    .grid{display:grid;gap:20px}
-    @media(min-width:768px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}.grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-    .card{background:linear-gradient(180deg,#111522,#0f1320);border:1px solid #1f2636;border-radius:18px;padding:20px;transition:transform .2s ease, box-shadow .2s ease}
-    .card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.35)}
-    .tag{display:inline-block;padding:6px 10px;border-radius:999px;background:#1a2133;border:1px solid #253049;color:#c6d0e0;font-size:.8rem}
-    .projects a{display:block}
-    .projects .card h4{margin:6px 0 8px}
-    .projects .card p{margin:0;color:var(--muted);font-size:.95rem}
-    /* Contact */
-    form{display:grid;gap:12px}
-    input, textarea{width:100%;padding:12px 14px;background:#0f1320;border:1px solid #232b40;border-radius:14px;color:#e8ecf4}
-    textarea{min-height:120px}
-    .small{font-size:.9rem}
-    footer{padding:50px 0;color:var(--muted);text-align:center}
-  </style>
+  <link rel="stylesheet" href="style.css" />
+
 </head>
 <body>
   <!-- Navbar -->
@@ -168,19 +127,8 @@
     <div class="container">© <span id="year"></span> AsliMichJose — Frontend Developer</div>
   </footer>
 
-  <script>
-    // Set active link on scroll
-    const links=[...document.querySelectorAll('.nav-links a')];
-    const sections=links.map(a=>document.querySelector(a.getAttribute('href')));
-    const onScroll=()=>{
-      const y=scrollY+100;
-      let idx=0;
-      sections.forEach((sec,i)=>{if(sec && sec.offsetTop<=y) idx=i});
-      links.forEach((a,i)=>a.classList.toggle('active',i===idx));
-    };
-    addEventListener('scroll',onScroll,{passive:true});
-    onScroll();
-    document.getElementById('year').textContent=new Date().getFullYear();
-  </script>
+ 
 </body>
+<script src ="script.js">
+</script>
 </html>
