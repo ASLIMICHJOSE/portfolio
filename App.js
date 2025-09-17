@@ -1,0 +1,180 @@
+import React, { useEffect, useState } from "react";
+import Particles from "react-tsparticles";
+import Typed from "typed.js";
+
+import "./App.css"; // move your CSS into here
+
+export default function App() {
+  const [theme, setTheme] = useState("dark");
+  const [accent, setAccent] = useState("#00c3ff");
+  const [year] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    // Typed.js init
+    const typed = new Typed("#typed-el", {
+      strings: ["Frontend Developer", "Performance Fanatic", "Figma → Code"],
+      typeSpeed: 60,
+      backSpeed: 35,
+      backDelay: 800,
+      loop: true,
+    });
+    return () => typed.destroy();
+  }, []);
+
+  return (
+    <div className={theme === "light" ? "light" : ""}>
+      {/* Particles background */}
+      <Particles
+        id="tsparticles"
+        options={{
+          fullScreen: { enable: false },
+          detectRetina: true,
+          particles: {
+            number: { value: 45, density: { enable: true, area: 800 } },
+            color: { value: ["#00c3ff", "#7b61ff", "#6a5acd"] },
+            opacity: { value: 0.18 },
+            size: { value: { min: 1, max: 5 } },
+            move: { enable: true, speed: 0.8, outModes: "out" },
+            links: { enable: true, color: "#ffffff", opacity: 0.06, distance: 130 },
+          },
+          interactivity: {
+            events: { onHover: { enable: true, mode: "repulse" }, onClick: { enable: true, mode: "push" } },
+            modes: { repulse: { distance: 80 }, push: { quantity: 3 } },
+          },
+        }}
+      />
+
+      {/* HEADER */}
+      <header>
+        <div className="container">
+          <nav>
+            <div className="top-panel">
+              <div className="logo">Asli Mich Jose</div>
+              <div className="badge">Frontend Developer</div>
+            </div>
+
+            <div className="nav">
+              <a href="#portfolio">Work</a>
+              <a href="#about">About</a>
+              <a href="#contact">Contact</a>
+              <div className="controls">
+                <button
+                  className="ghost"
+                  aria-pressed={theme === "light"}
+                  onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                >
+                  {theme === "light" ? "🌞" : "🌙"}
+                </button>
+
+                <input
+                  type="color"
+                  value={accent}
+                  onChange={(e) => {
+                    setAccent(e.target.value);
+                    document.documentElement.style.setProperty("--accent", e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <main className="container">
+        <section className="hero" id="home">
+          <div className="hero-card hero-grid">
+            <div>
+              <h1>
+                Hi, I’m <span className="name">Asli Mich Jose</span>
+              </h1>
+              <h2 style={{ margin: "6px 0 10px", fontWeight: 700 }}>
+                <span id="typed-el" style={{ color: "var(--accent)" }}></span>
+              </h2>
+              <p>
+                I build modern, high-performance, interactive websites & landing
+                pages. My focus: accessibility, animation, and delightful user
+                experience.
+              </p>
+              <div className="cta-row">
+                <a className="btn" href="#portfolio">See My Work</a>
+                <button className="ghost" onClick={() => document.querySelector("#contact").scrollIntoView({ behavior: "smooth" })}>
+                  Let's Talk
+                </button>
+              </div>
+              <div className="features">
+                <div className="chip">React • Vanilla JS • CSS / Tailwind</div>
+                <div className="chip">Performance & SEO</div>
+                <div className="chip">Figma → Production</div>
+              </div>
+            </div>
+
+            <div className="mockup" aria-hidden="true">
+              <div className="device">
+                <img
+                  src="https://via.placeholder.com/380x260.png?text=Project+Preview"
+                  alt="project preview"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ABOUT */}
+        <section id="about">
+          <h2>About</h2>
+          <div className="hero-card">
+            <p className="muted">
+              I craft production-ready frontends with clean code, polished UI and
+              attention to performance. I like building interactive components,
+              complex animations, and integrating UIs with APIs/servers.
+            </p>
+            <div className="features">
+              <div className="chip">Accessibility</div>
+              <div className="chip">Unit-tested components</div>
+              <div className="chip">Build & deploy (CI/CD)</div>
+            </div>
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact">
+          <h2>Contact</h2>
+          <div className="hero-card">
+            <p className="muted">
+              Interested in working together? Tell me about your project.
+            </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                alert("Thanks! I will reply soon.");
+              }}
+              style={{ display: "grid", gap: "10px", maxWidth: "520px" }}
+            >
+              <input name="name" required placeholder="Name" />
+              <input type="email" name="email" required placeholder="Email" />
+              <textarea name="message" required placeholder="Project brief"></textarea>
+              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                <button className="btn" type="submit">
+                  Send
+                </button>
+                <button
+                  className="ghost"
+                  type="button"
+                  onClick={() => navigator.clipboard.writeText("youremail@example.com").then(() => alert("Email copied"))}
+                >
+                  Copy Email
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        {/* FOOTER */}
+        <footer>
+          <div className="muted">© {year} Asli Mich Jose — Built with care</div>
+        </footer>
+      </main>
+    </div>
+  );
+}

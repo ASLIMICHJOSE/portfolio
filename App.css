@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root{
+  --bg: #071023;
+  --panel: rgba(17,22,34,.66);
+  --card: linear-gradient(180deg,#0f1320,#0b0e16);
+  --text: #eaf3ff;
+  --muted: #9fb1c9;
+  --accent: #00c3ff;
+  --glass-border: rgba(255,255,255,0.06);
+  --radius: 14px;
+  --glass: rgba(255,255,255,0.03);
+  --card-elev: 0 8px 30px rgba(2,6,23,.6);
+  transition: 0.25s ease;
+}
+/* Light theme variables get toggled via .light on body */
+body.light {
+  --bg: #f6f8fb;
+  --panel: rgba(255,255,255,.9);
+  --card: linear-gradient(180deg,#ffffff,#f7f9fc);
+  --text: #0b1724;
+  --muted: #455a6b;
+  --glass: rgba(10,16,24,0.02);
+  --glass-border: rgba(10,16,24,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial; background:radial-gradient(1200px 400px at 10% 10%, rgba(0,195,255,.03), transparent), var(--bg); color:var(--text); -webkit-font-smoothing:antialiased}
+a{color:inherit}
+.container{max-width:1100px; margin:0 auto; padding:28px}
+header{position:sticky; top:0; z-index:60; padding:12px 0; backdrop-filter:blur(8px); background:linear-gradient(180deg, rgba(7,16,35,0.4), rgba(7,16,35,0.1)); border-bottom:1px solid var(--glass-border)}
+nav{display:flex; align-items:center; justify-content:space-between}
+.logo{font-weight:800; font-size:1.1rem; background:linear-gradient(90deg,var(--accent), #6a5acd); -webkit-background-clip:text; color:transparent}
+.nav{display:flex; gap:12px; align-items:center}
+.nav a{padding:8px 12px; border-radius:10px; color:var(--muted); text-decoration:none; font-weight:600}
+.nav a:hover{background:var(--glass); color:var(--text)}
+.controls{display:flex; gap:10px; align-items:center}
+
+/* top panel with short info */
+.top-panel{display:flex; gap:18px; align-items:center}
+.badge{font-size:0.8rem; color:var(--muted); border-radius:999px; padding:8px 12px; background:var(--glass); border:1px solid var(--glass-border)}
+
+/* hero */
+.hero{min-height:78vh; display:grid; grid-template-columns:1fr; align-items:center; gap:28px; position:relative; overflow:hidden; padding-top:8px}
+.hero-grid{display:grid; gap:18px}
+@media(min-width:940px){ .hero{grid-template-columns: 1fr 420px; align-items:center} }
+
+.hero-card{background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:28px; border-radius:18px; border:1px solid var(--glass-border); box-shadow:var(--card-elev)}
+.hero h1{font-size:clamp(1.8rem,4vw,2.6rem); margin:0 0 6px}
+.hero h1 .name{background:linear-gradient(90deg,var(--accent), #7b61ff); -webkit-background-clip:text; color:transparent}
+.hero p{margin:0; color:var(--muted); font-size:1.05rem}
+.cta-row{margin-top:14px; display:flex; gap:12px; align-items:center}
+.btn{padding:12px 16px; border-radius:12px; background:linear-gradient(90deg,var(--accent), #6a5acd); color:#fff; font-weight:700; box-shadow:0 6px 20px rgba(0,0,0,.35); border:none; cursor:pointer}
+.ghost{padding:10px 14px; border-radius:12px; background:transparent; border:1px solid var(--glass-border); color:var(--muted); cursor:pointer}
+
+/* small features row */
+.features{display:flex; gap:12px; margin-top:16px; flex-wrap:wrap}
+.chip{padding:10px 12px; border-radius:12px; background:var(--glass); border:1px solid var(--glass-border); color:var(--muted); font-weight:600}
+
+/* right column - mockup */
+.mockup{width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:10px}
+.device{
+  width:360px; max-width:100%; border-radius:18px; padding:14px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008));
+  border:1px solid var(--glass-border); box-shadow:0 20px 60px rgba(2,6,23,.6);
+}
+.device img{width:100%; display:block; border-radius:10px}
+
+/* projects */
+section{padding:48px 0}
+h2{margin:0 0 14px; font-size:1.5rem}
+.grid{display:grid; gap:18px}
+.cols-3{grid-template-columns: 1fr; }
+@media(min-width:880px){ .cols-3{grid-template-columns: repeat(3,1fr)} }
+
+.project-card{position:relative; overflow:hidden; border-radius:16px; min-height:180px; display:flex; flex-direction:column; justify-content:flex-end; padding:16px; cursor:pointer; transition:transform .28s ease, box-shadow .28s ease; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--glass-border)}
+.project-card:hover{transform:translateY(-8px); box-shadow:0 20px 50px rgba(2,6,23,.5)}
+.project-card .title{font-weight:800; font-size:1.05rem}
+.project-card .desc{color:var(--muted); font-size:0.95rem; margin-top:6px}
+.project-overlay{position:absolute; inset:0; display:flex; align-items:end; padding:16px; pointer-events:none}
+.project-badge{pointer-events:auto; background:rgba(0,0,0,0.45); padding:8px 10px; border-radius:10px; color:#fff; font-weight:700; font-size:0.9rem}
+
+/* modal */
+.modal-backdrop{position:fixed; inset:0; display:none; align-items:center; justify-content:center; z-index:80; background:linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.7))}
+.modal{width:min(980px,94%); max-height:86vh; overflow:auto; background:var(--panel); border-radius:14px; padding:20px; border:1px solid var(--glass-border)}
+.modal .modal-grid{display:grid; gap:14px}
+@media(min-width:880px){ .modal .modal-grid{grid-template-columns: 1fr 360px} }
+.modal .shots{display:flex; gap:10px; overflow:hidden}
+.shots img{width:100%; border-radius:8px}
+.tech {display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+.tech .t{padding:6px 8px; border-radius:8px; background:var(--glass); border:1px solid var(--glass-border); color:var(--muted); font-weight:700; font-size:0.85rem}
+
+/* github list */
+.repo{background:var(--card); padding:12px; border-radius:10px; border:1px solid var(--glass-border); transition:transform .2s}
+.repo:hover{transform:translateY(-6px)}
+
+/* footer */
+footer{padding:36px 0; color:var(--muted); text-align:center}
+
+/* custom cursor */
+.cursor{position:fixed; left:0; top:0; width:18px; height:18px; border-radius:999px; transform:translate(-50%,-50%); pointer-events:none; z-index:9999; transition:background .12s linear, transform .06s linear, width .12s, height .12s; border:2px solid rgba(255,255,255,0.14); box-shadow:0 6px 20px rgba(2,6,23,.5)}
+.cursor.big{width:48px; height:48px; border-width:1px; background:linear-gradient(90deg,var(--accent), #7b61ff, transparent)}
+
+/* small helpers */
+.muted{color:var(--muted)}
+.flex{display:flex}
+.space{flex:1}
+input[type="color"]{width:36px; height:36px; padding:0; border-radius:8px; border:1px;}
