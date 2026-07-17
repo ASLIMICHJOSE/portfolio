@@ -6,37 +6,37 @@ export default function Certifications() {
       title: 'Azure Fundamentals (AZ-900)',
       issuer: 'Microsoft Certified',
       icon: 'verified',
-      pdfUrl: '/certificate/Microsoft_Certified_Azure_Fundamentals.pdf'
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/Microsoft_Certified_Azure_Fundamentals.pdf`
     },
     {
       title: 'Career Essentials in Software Development',
       issuer: 'Microsoft & LinkedIn',
       icon: 'developer_mode',
-      pdfUrl: '/certificate/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf'
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf`
     },
     {
       title: 'Introduction to Career Skills in Software Development',
       issuer: 'Microsoft & LinkedIn',
       icon: 'badge',
-      pdfUrl: '/certificate/CertificateOfCompletion_Introduction to Career Skills in Software Development (1).pdf'
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Introduction to Career Skills in Software Development (1).pdf`
     },
     {
       title: 'Introduction to Data Science',
       issuer: 'Cognitive Class / IBM',
       icon: 'database',
-      pdfUrl: '/certificate/CertificateOfCompletion_Introduction to Data Science.pdf'
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Introduction to Data Science.pdf`
     },
     {
       title: 'Data Cleaning in Python',
       issuer: 'LinkedIn Learning',
       icon: 'terminal',
-      pdfUrl: '/certificate/CertificateOfCompletion_Data Cleaning in Python Essential Training.pdf'
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Data Cleaning in Python Essential Training.pdf`
     },
     {
       title: 'Learning Data Analytics Foundations',
       issuer: 'LinkedIn Learning',
       icon: 'analytics',
-      pdfUrl: '/certificate/CertificateOfCompletion_Learning Data Analytics 1 Foundations.pdf'
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Learning Data Analytics 1 Foundations.pdf`
     }
   ];
 

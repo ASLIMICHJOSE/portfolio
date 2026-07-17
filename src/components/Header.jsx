@@ -70,7 +70,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-interact ml-4 px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all duration-200"
@@ -110,7 +110,7 @@ export default function Header() {
           ))}
           <div className="pt-sm border-t border-outline-variant/30 flex justify-center">
             <a
-              href="/resume.pdf"
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-interact w-full text-center py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all duration-200"

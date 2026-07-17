@@ -97,7 +97,7 @@ export default function Hero() {
             View Projects
           </a>
           <a 
-            href="/resume.pdf"
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
             download="resume.pdf"
             className="btn-interact px-lg py-4 bg-surface text-primary border border-outline-variant font-label-md text-label-md rounded hover:bg-surface-container-low transition-all text-center flex items-center justify-center"
           >
@@ -110,7 +110,7 @@ export default function Hero() {
         <img 
           alt="Asli Mich Jose J Professional Portrait" 
           className="w-full h-auto rounded-xl shadow-lg border border-outline-variant/30 object-cover aspect-[4/5] max-h-[500px]" 
-          src="/assets/images/portrait.jpg"
+          src={`${import.meta.env.BASE_URL}assets/images/portrait.jpg`}
         />
       </div>
     </section>

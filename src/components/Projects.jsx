@@ -11,7 +11,7 @@ export default function Projects() {
         'Fully responsive item catalog grids',
         'Interactive state-managed shopping bag slide-over'
       ],
-      image: '/assets/images/zyraa.png',
+      image: `${import.meta.env.BASE_URL}assets/images/zyraa.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/Zyraa',
       githubUrl: 'https://github.com/ASLIMICHJOSE/Zyraa'
     },
@@ -24,7 +24,7 @@ export default function Projects() {
         'Supabase dynamic backend and authentication',
         'Real-time shipping estimates and geolocation integration'
       ],
-      image: '/assets/images/serofast.png',
+      image: `${import.meta.env.BASE_URL}assets/images/serofast.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/SeroFast',
       githubUrl: 'https://github.com/ASLIMICHJOSE/SeroFast'
     },
@@ -37,7 +37,7 @@ export default function Projects() {
         'Interactive skill trees and progress meters',
         'Automated job-role requirement mapping engine'
       ],
-      image: '/assets/images/career_guidance.png',
+      image: `${import.meta.env.BASE_URL}assets/images/career_guidance.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/AI-Career-Guidance-System',
       githubUrl: 'https://github.com/ASLIMICHJOSE/AI-Career-Guidance-System'
     },
@@ -50,7 +50,7 @@ export default function Projects() {
         'Onboarding client sign-up registration forms',
         'Responsive layout optimized for multiple device sizes'
       ],
-      image: '/assets/images/fitness_trainer.png',
+      image: `${import.meta.env.BASE_URL}assets/images/fitness_trainer.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/Fitness-Trainer-Website',
       githubUrl: 'https://github.com/ASLIMICHJOSE/Fitness-Trainer-Website'
     },
@@ -63,7 +63,7 @@ export default function Projects() {
         'Focal length camera calibration algorithm',
         'Real-time distance calculation in meters'
       ],
-      image: '/assets/images/object_detection.png',
+      image: `${import.meta.env.BASE_URL}assets/images/object_detection.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement',
       githubUrl: 'https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement'
     }
