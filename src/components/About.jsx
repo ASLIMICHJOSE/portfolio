@@ -8,19 +8,19 @@ export default function About() {
       description: 'Creating pixel-perfect, highly responsive React templates with clean and structured CSS layouts.'
     },
     {
-      icon: 'visibility',
-      title: 'Computer Vision',
-      description: 'Integrating object detection (YOLOv8) models with web interfaces to measure real-time distance.'
+      icon: 'widgets',
+      title: 'Component Architecture',
+      description: 'Designing modular, reusable, and testable React component libraries that scale across web applications.'
+    },
+    {
+      icon: 'account_tree',
+      title: 'State Management',
+      description: 'Handling complex user interactions and local/global application states with React Hooks and Context APIs.'
     },
     {
       icon: 'speed',
-      title: 'Performance Focus',
-      description: 'Striving for minimal bundle footprint, optimized rendering lifecycles, and standard accessibility rules.'
-    },
-    {
-      icon: 'cloud',
-      title: 'Cloud & Database',
-      description: 'Deploying secure serverless architectures and managing databases (Supabase, PostgreSQL) with Microsoft Azure.'
+      title: 'Web Performance',
+      description: 'Optimizing rendering cycles, minimizing bundle footprint, and auditing for high Lighthouse core vitals.'
     }
   ];
 

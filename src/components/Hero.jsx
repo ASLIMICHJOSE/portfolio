@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 export default function Hero() {
   const roles = [
-    "Building the web, one component at a time.",
-    "Deploying scalable cloud solutions on Azure."
+    "Building interactive, pixel-perfect user interfaces.",
+    "Creating modern web applications with React & Tailwind.",
+    "Optimizing client-side rendering & load performance."
   ];
 
   const [text, setText] = useState('');
@@ -17,11 +18,11 @@ export default function Hero() {
     if (isDeleting) {
       timer = setTimeout(() => {
         setText(currentRole.substring(0, text.length - 1));
-      }, 30);
+      }, 20);
     } else {
       timer = setTimeout(() => {
         setText(currentRole.substring(0, text.length + 1));
-      }, 70);
+      }, 50);
     }
 
     if (!isDeleting && text === currentRole) {
@@ -47,10 +48,10 @@ export default function Hero() {
   };
 
   const badges = [
-    { text: 'React Dev', color: 'bg-[#e0f2fe] text-[#0369a1]' },
-    { text: 'AI Builder', color: 'bg-[#faf5ff] text-[#7e22ce]' },
-    { text: 'Azure Certified', color: 'bg-[#ecfdf5] text-[#047857]' },
-    { text: 'CS Student', color: 'bg-[#fff7ed] text-[#c2410c]' }
+    { text: 'React Developer', color: 'bg-[#e0f2fe] text-[#0369a1]' },
+    { text: 'Frontend Specialist', color: 'bg-[#faf5ff] text-[#7e22ce]' },
+    { text: 'Tailwind Expert', color: 'bg-[#ecfdf5] text-[#047857]' },
+    { text: 'UI/UX Builder', color: 'bg-[#fff7ed] text-[#c2410c]' }
   ];
 
   return (
@@ -70,22 +71,22 @@ export default function Hero() {
           ))}
         </div>
         <p className="font-label-md text-label-md text-secondary uppercase tracking-widest font-bold">
-          Front-End Developer & AI Builder
+          Front-End Developer
         </p>
         <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
           Hello, I'm <span className="text-primary font-bold">Asli Mich Jose J</span>.
         </h1>
         
         {/* Typing Subtitle */}
-        <div className="h-8 md:h-10 flex items-center">
-          <p className="font-headline-sm text-headline-sm text-secondary font-medium">
+        <div className="h-12 md:h-14 flex items-center">
+          <p className="font-headline-sm text-headline-sm text-secondary font-medium leading-normal">
             {text}
             <span className="inline-block w-0.5 h-5 bg-secondary ml-1 animate-pulse" />
           </p>
         </div>
 
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-          I build robust, scalable, and beautifully engineered web applications. Passionate about solving complex problems through elegant code.
+          I build responsive, robust, and beautifully engineered user interfaces. Passionate about creating seamless user experiences through clean code.
         </p>
         <div className="flex flex-wrap gap-md pt-base">
           <a 

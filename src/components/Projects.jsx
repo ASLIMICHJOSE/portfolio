@@ -3,32 +3,6 @@ import React from 'react';
 export default function Projects() {
   const projects = [
     {
-      title: 'AI Object Detection & Distance Measurement',
-      tags: ['AI & Computer Vision', 'Python'],
-      description: 'Real-time AI model that detects objects and measures the distance between the camera and detected targets using computer vision geometry.',
-      features: [
-        'YOLOv8 Object Detection and Classification',
-        'Focal length camera calibration algorithm',
-        'Real-time distance calculation in meters'
-      ],
-      image: '/assets/images/object_detection.png',
-      demoUrl: 'https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement',
-      githubUrl: 'https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement'
-    },
-    {
-      title: 'SeroFast — Medical E-Commerce & Platform',
-      tags: ['Full-Stack', 'React', 'Supabase'],
-      description: 'Full-stack medical e-commerce marketplace & clinical predictor. Features geolocation APIs, autocomplete catalog search, dynamic delivery estimates, and vendor dashboards.',
-      features: [
-        'AI Clinical Symptom Predictor API',
-        'Supabase dynamic backend and authentication',
-        'Real-time shipping estimates and geolocation integration'
-      ],
-      image: '/assets/images/serofast.png',
-      demoUrl: 'https://github.com/ASLIMICHJOSE/SeroFast',
-      githubUrl: 'https://github.com/ASLIMICHJOSE/SeroFast'
-    },
-    {
       title: 'Zyraa — Fashion E-Commerce',
       tags: ['Front-End', 'React', 'Tailwind CSS'],
       description: 'Modern fashion e-commerce platform featuring a pixel-perfect responsive UI, clean component architecture, and focus on clean typography and rich aesthetics.',
@@ -40,6 +14,19 @@ export default function Projects() {
       image: '/assets/images/zyraa.png',
       demoUrl: 'https://github.com/ASLIMICHJOSE/Zyraa',
       githubUrl: 'https://github.com/ASLIMICHJOSE/Zyraa'
+    },
+    {
+      title: 'SeroFast — Medical E-Commerce & Platform',
+      tags: ['Full-Stack Web App', 'React', 'Supabase'],
+      description: 'Full-stack medical e-commerce marketplace & clinical predictor. Features geolocation APIs, autocomplete catalog search, dynamic delivery estimates, and vendor dashboards.',
+      features: [
+        'AI Clinical Symptom Predictor API',
+        'Supabase dynamic backend and authentication',
+        'Real-time shipping estimates and geolocation integration'
+      ],
+      image: '/assets/images/serofast.png',
+      demoUrl: 'https://github.com/ASLIMICHJOSE/SeroFast',
+      githubUrl: 'https://github.com/ASLIMICHJOSE/SeroFast'
     },
     {
       title: 'AI Career Guidance System',
@@ -66,6 +53,19 @@ export default function Projects() {
       image: '/assets/images/fitness_trainer.png',
       demoUrl: 'https://github.com/ASLIMICHJOSE/Fitness-Trainer-Website',
       githubUrl: 'https://github.com/ASLIMICHJOSE/Fitness-Trainer-Website'
+    },
+    {
+      title: 'AI Object Detection & Distance Measurement',
+      tags: ['Computer Vision', 'Python', 'YOLOv8'],
+      description: 'Real-time AI model that detects objects and measures the distance between the camera and detected targets using computer vision geometry.',
+      features: [
+        'YOLOv8 Object Detection and Classification',
+        'Focal length camera calibration algorithm',
+        'Real-time distance calculation in meters'
+      ],
+      image: '/assets/images/object_detection.png',
+      demoUrl: 'https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement',
+      githubUrl: 'https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement'
     }
   ];
 

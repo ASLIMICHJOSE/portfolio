@@ -3,24 +3,24 @@ import React from 'react';
 export default function Skills() {
   const skillCategories = [
     {
-      title: 'Frontend',
-      skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS', 'Responsive Design', 'API Integration']
+      title: 'Core Frontend',
+      skills: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React', 'Tailwind CSS', 'Responsive Design']
     },
     {
-      title: 'AI & Computer Vision',
-      skills: ['Python', 'OpenCV', 'YOLOv8', 'TensorFlow', 'Object Detection']
+      title: 'Advanced Web Tech',
+      skills: ['TypeScript', 'Vite', 'React Native', 'Sass/SCSS', 'CSS Grid & Flexbox', 'Web Performance']
+    },
+    {
+      title: 'Libraries & State',
+      skills: ['React Hooks', 'Context API', 'Axios', 'REST API Integration', 'Form Validation']
     },
     {
       title: 'Tools & Platforms',
-      skills: ['Git', 'GitHub', 'Microsoft Azure', 'GitHub Pages', 'Vite', 'VS Code']
-    },
-    {
-      title: 'Other Tech',
-      skills: ['Cloud Computing', 'Java', 'React Native', 'Flutter', 'Dart']
+      skills: ['Git', 'GitHub', 'Microsoft Azure', 'GitHub Pages', 'npm', 'VS Code']
     }
   ];
 
-  const levelingUp = ['Cloud Architectures', 'Advanced React', 'DevOps Basics', 'Deep Learning'];
+  const levelingUp = ['Next.js (Server Components)', 'TypeScript Deep Dive', 'Advanced State Managers', 'Web Accessibility (a11y)'];
 
   return (
     <section className="py-xl px-md bg-surface-container-lowest reveal" id="skills">
@@ -56,7 +56,7 @@ export default function Skills() {
             <span className="material-symbols-outlined text-4xl text-primary animate-pulse">trending_up</span>
             <div>
               <h5 className="font-label-md text-label-md font-bold text-primary">Currently Leveling Up</h5>
-              <p className="text-label-sm font-label-sm text-on-surface-variant">Actively expanding my knowledge in these fields</p>
+              <p className="text-label-sm font-label-sm text-on-surface-variant">Actively expanding my knowledge in these frontend fields</p>
             </div>
           </div>
           <div className="flex flex-wrap gap-base justify-center">
