@@ -7,14 +7,14 @@ export default function Contact() {
     subject: '',
     message: ''
   });
-  const [status, setStatus] = useState('idle'); // idle | sending | success
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       alert('Please fill out all required fields.');
@@ -22,16 +22,39 @@ export default function Contact() {
     }
     
     setStatus('sending');
-    // Simulate sending message
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/aslimich22@gmail.com', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          _replyto: formData.email,
+          _subject: formData.subject ? `[Portfolio Inquiry] ${formData.subject}` : `[Portfolio Inquiry] New Message from ${formData.name}`,
+          message: formData.message,
+          _captcha: 'false'
+        })
       });
-    }, 1500);
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      console.error('Failed to send email:', err);
+      setStatus('error');
+    }
   };
 
   return (
@@ -114,17 +137,39 @@ export default function Contact() {
         <div className="bg-surface-container-low p-xl rounded-xl border border-outline-variant/30 hover:shadow-lg transition-shadow duration-500">
           {status === 'success' ? (
             <div className="h-full flex flex-col items-center justify-center text-center py-md space-y-md animate-fadeIn">
-              <span className="material-symbols-outlined text-6xl text-primary-container">check_circle</span>
-              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Message Sent!</h4>
+              <span className="material-symbols-outlined text-6xl text-primary p-3 bg-primary/10 rounded-full">check_circle</span>
+              <h4 className="font-headline-sm text-headline-sm text-primary font-bold">Message Delivered!</h4>
               <p className="font-body-md text-on-surface-variant max-w-sm">
-                Thank you for reaching out. I'll get back to you as soon as possible!
+                Your message has been sent directly to <strong className="text-on-surface">aslimich22@gmail.com</strong>. I'll get back to you shortly!
               </p>
               <button 
                 onClick={() => setStatus('idle')}
-                className="btn-interact px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all"
+                className="btn-interact px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all font-semibold"
               >
                 Send another message
               </button>
+            </div>
+          ) : status === 'error' ? (
+            <div className="h-full flex flex-col items-center justify-center text-center py-md space-y-md animate-fadeIn">
+              <span className="material-symbols-outlined text-6xl text-error">error</span>
+              <h4 className="font-headline-sm text-headline-sm text-error font-bold">Something went wrong</h4>
+              <p className="font-body-md text-on-surface-variant max-w-sm">
+                Unable to deliver the message automatically. You can email me directly at <a href="mailto:aslimich22@gmail.com" className="text-primary underline">aslimich22@gmail.com</a>.
+              </p>
+              <div className="flex gap-md">
+                <button 
+                  onClick={() => setStatus('idle')}
+                  className="btn-interact px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all font-semibold"
+                >
+                  Try Again
+                </button>
+                <a 
+                  href={`mailto:aslimich22@gmail.com?subject=${encodeURIComponent(formData.subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(formData.message)}`}
+                  className="btn-interact px-md py-2 border border-outline-variant text-primary font-label-md text-label-md rounded hover:bg-surface-container transition-all font-semibold"
+                >
+                  Open Email Client
+                </a>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-md">
@@ -138,7 +183,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-surface border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none" 
+                    className="w-full px-4 py-3 bg-surface border border-outline-variant/60 rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none" 
                     placeholder="John Doe" 
                     type="text"
                   />
@@ -152,7 +197,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full bg-surface border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none" 
+                    className="w-full px-4 py-3 bg-surface border border-outline-variant/60 rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none" 
                     placeholder="john@example.com" 
                     type="email"
                   />
@@ -166,7 +211,7 @@ export default function Contact() {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full bg-surface border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none" 
+                  className="w-full px-4 py-3 bg-surface border border-outline-variant/60 rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none" 
                   placeholder="Project Inquiry" 
                   type="text"
                 />
@@ -180,22 +225,27 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full bg-surface border-outline-variant rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none" 
+                  className="w-full px-4 py-3 bg-surface border border-outline-variant/60 rounded focus:border-primary focus:ring-1 focus:ring-primary text-on-surface transition-all outline-none resize-none" 
                   placeholder="How can I help you?" 
                   rows={4}
                 />
               </div>
               <button 
                 disabled={status === 'sending'}
-                className="btn-interact w-full py-md bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all shadow-md flex items-center justify-center gap-sm disabled:opacity-70" 
+                className="btn-interact w-full py-md bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all shadow-md flex items-center justify-center gap-sm disabled:opacity-70 font-bold" 
                 type="submit"
               >
                 {status === 'sending' ? (
                   <>
                     <span className="w-5 h-5 border-2 border-on-primary border-t-transparent rounded-full animate-spin"></span>
-                    Sending...
+                    Sending to Gmail...
                   </>
-                ) : 'Send Message'}
+                ) : (
+                  <>
+                    <span className="material-symbols-outlined text-lg">send</span>
+                    Send Message
+                  </>
+                )}
               </button>
             </form>
           )}

@@ -55,10 +55,10 @@ export default function Timeline() {
           <h2 className="font-headline-md text-headline-md mb-xl flex items-center gap-md font-bold">
             <span className="material-symbols-outlined text-primary">work</span> Experience
           </h2>
-          <div className="relative border-l-2 border-outline-variant ml-4 pl-8 space-y-xl">
+          <div className="relative border-l-2 border-outline-variant ml-2 md:ml-4 pl-6 md:pl-8 space-y-xl">
             {experiences.map((exp, idx) => (
               <div key={idx} className="relative group">
-                <div className="absolute -left-[41px] top-0.5 w-4 h-4 bg-primary rounded-full border-4 border-surface group-hover:scale-125 transition-transform duration-300"></div>
+                <div className="absolute -left-[33px] md:-left-[41px] top-0.5 w-4 h-4 bg-primary rounded-full border-4 border-surface group-hover:scale-125 transition-transform duration-300"></div>
                 <span className="font-label-sm text-label-sm text-secondary mb-base block">
                   {exp.period}
                 </span>
@@ -83,10 +83,10 @@ export default function Timeline() {
           <h2 className="font-headline-md text-headline-md mb-xl flex items-center gap-md font-bold">
             <span className="material-symbols-outlined text-primary">school</span> Education
           </h2>
-          <div className="relative border-l-2 border-outline-variant ml-4 pl-8 space-y-xl">
+          <div className="relative border-l-2 border-outline-variant ml-2 md:ml-4 pl-6 md:pl-8 space-y-xl">
             {education.map((edu, idx) => (
               <div key={idx} className="relative group">
-                <div className="absolute -left-[41px] top-0.5 w-4 h-4 bg-primary rounded-full border-4 border-surface group-hover:scale-125 transition-transform duration-300"></div>
+                <div className="absolute -left-[33px] md:-left-[41px] top-0.5 w-4 h-4 bg-primary rounded-full border-4 border-surface group-hover:scale-125 transition-transform duration-300"></div>
                 <span className="font-label-sm text-label-sm text-secondary mb-base block">
                   {edu.period}
                 </span>

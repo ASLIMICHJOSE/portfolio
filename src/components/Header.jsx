@@ -13,7 +13,6 @@ export default function Header() {
         const el = document.getElementById(sectionId);
         if (el) {
           const rect = el.getBoundingClientRect();
-          // If the top of the section is near the top of the viewport
           if (rect.top <= 150) {
             currentSection = sectionId;
           }
@@ -47,9 +46,9 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+    <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-colors duration-300">
       <div className="flex justify-between items-center max-w-container-max mx-auto px-md h-16">
-        <a className="font-headline-sm text-headline-sm font-bold text-primary" href="#home" onClick={(e) => handleNavClick(e, 'home')}>
+        <a className="font-headline-sm text-headline-sm font-bold text-primary tracking-tight" href="#home" onClick={(e) => handleNavClick(e, 'home')}>
           Asli Mich Jose J
         </a>
 
@@ -69,11 +68,12 @@ export default function Header() {
               {link.name}
             </a>
           ))}
+
           <a
             href={`${import.meta.env.BASE_URL}resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-interact ml-4 px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all duration-200"
+            className="btn-interact ml-2 px-md py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all duration-200 font-semibold"
           >
             Resume
           </a>
@@ -81,7 +81,7 @@ export default function Header() {
 
         {/* Mobile menu trigger */}
         <button
-          className="md:hidden text-primary focus:outline-none"
+          className="md:hidden text-primary focus:outline-none p-1"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
@@ -93,29 +93,29 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-surface border-b border-outline-variant/30 px-md py-md space-y-md shadow-lg animate-fadeIn">
+        <div className="md:hidden bg-surface border-b border-outline-variant/30 px-md py-md space-y-md shadow-xl transition-all duration-300">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
               onClick={(e) => handleNavClick(e, link.id)}
-              className={`block py-2 font-label-md text-label-md ${
+              className={`block py-2.5 font-label-md text-label-md rounded-lg px-3 transition-colors ${
                 activeSection === link.id
-                  ? 'text-primary font-bold border-l-2 border-primary pl-2'
-                  : 'text-on-surface-variant pl-2'
+                  ? 'text-primary font-bold bg-primary/10 border-l-4 border-primary'
+                  : 'text-on-surface-variant hover:text-primary hover:bg-surface-container-low'
               }`}
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-sm border-t border-outline-variant/30 flex justify-center">
+          <div className="pt-sm border-t border-outline-variant/30 flex flex-col gap-sm">
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-interact w-full text-center py-2 bg-primary text-on-primary font-label-md text-label-md rounded hover:opacity-90 transition-all duration-200"
+              className="btn-interact w-full text-center py-2.5 bg-primary text-on-primary font-label-md text-label-md rounded font-semibold hover:opacity-90 transition-all duration-200"
             >
-              Resume
+              Download Resume
             </a>
           </div>
         </div>

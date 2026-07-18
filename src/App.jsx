@@ -9,6 +9,7 @@ import Certifications from './components/Certifications';
 import GithubActivity from './components/GithubActivity';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ThemeToggle from './components/ThemeToggle';
 
 export default function App() {
   useEffect(() => {
@@ -67,6 +68,9 @@ export default function App() {
         {/* Contact Form & Connection Info Section */}
         <Contact />
       </main>
+
+      {/* Floating Theme Toggle Widget */}
+      <ThemeToggle />
 
       {/* Footer Section */}
       <Footer />

@@ -48,23 +48,23 @@ export default function Hero() {
   };
 
   const badges = [
-    { text: 'React Developer', color: 'bg-[#e0f2fe] text-[#0369a1]' },
-    { text: 'Frontend Specialist', color: 'bg-[#faf5ff] text-[#7e22ce]' },
-    { text: 'Tailwind Expert', color: 'bg-[#ecfdf5] text-[#047857]' },
-    { text: 'UI/UX Builder', color: 'bg-[#fff7ed] text-[#c2410c]' }
+    { text: 'React Developer', color: 'bg-sky-100 text-sky-800 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800/50' },
+    { text: 'Frontend Specialist', color: 'bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800/50' },
+    { text: 'Tailwind Expert', color: 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800/50' },
+    { text: 'UI/UX Builder', color: 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/50' }
   ];
 
   return (
     <section 
-      className="pt-32 pb-xl px-md max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-lg reveal" 
+      className="pt-24 sm:pt-32 pb-xl px-md max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-lg reveal" 
       id="home"
     >
       <div className="space-y-md">
-        <div className="flex flex-wrap gap-sm mb-xs">
+        <div className="flex flex-wrap gap-xs sm:gap-sm mb-xs">
           {badges.map((badge, idx) => (
             <span 
               key={idx} 
-              className={`px-sm py-1 rounded-full text-label-sm font-label-sm border border-transparent hover:border-current transition-colors duration-300 ${badge.color}`}
+              className={`px-sm py-1 rounded-full text-label-sm font-label-sm border transition-colors duration-300 ${badge.color}`}
             >
               {badge.text}
             </span>
