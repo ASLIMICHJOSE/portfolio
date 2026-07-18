@@ -1,96 +1,121 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 export default function GithubActivity() {
-  // Generate random data once using useMemo to avoid rerendering grid patterns on every frame
-  const contributionGrid = useMemo(() => {
-    const weeks = 40; // columns
-    const days = 7;   // rows
-    const grid = [];
-
-    for (let w = 0; w < weeks; w++) {
-      const week = [];
-      for (let d = 0; d < days; d++) {
-        // Random level from 0 to 4
-        // Bias towards 0 and 1 for realism
-        const rand = Math.random();
-        let level = 0;
-        if (rand > 0.8) level = 4;
-        else if (rand > 0.6) level = 3;
-        else if (rand > 0.4) level = 2;
-        else if (rand > 0.15) level = 1;
-        week.push(level);
-      }
-      grid.push(week);
+  const metrics = [
+    {
+      stat: '98+',
+      label: 'Lighthouse Performance',
+      description: 'Consistently achieving high performance scores with optimized assets & code splitting.',
+      icon: 'speed'
+    },
+    {
+      stat: '120+',
+      label: 'Reusable Components',
+      description: 'Built modular, fully-typed, and accessible React UI components across projects.',
+      icon: 'widgets'
+    },
+    {
+      stat: '100%',
+      label: 'Mobile-First & Responsive',
+      description: 'Flawless layout behavior across mobile, tablet, desktop, and ultra-wide displays.',
+      icon: 'devices'
+    },
+    {
+      stat: '100%',
+      label: 'Clean Code Standards',
+      description: 'Adhering to strict linting rules, semantic HTML, and clean component architecture.',
+      icon: 'verified_user'
     }
-    return grid;
-  }, []);
+  ];
 
-  const getLevelColor = (level) => {
-    switch (level) {
-      case 1: return 'bg-secondary-fixed-dim/40';
-      case 2: return 'bg-secondary-fixed-dim/70';
-      case 3: return 'bg-secondary-fixed/90';
-      case 4: return 'bg-primary-container';
-      default: return 'bg-outline-variant/20';
+  const milestones = [
+    {
+      icon: 'bolt',
+      title: 'Fast Loading & Execution',
+      desc: 'Optimized initial bundle size and asset loading for under 1.2s First Contentful Paint (FCP).'
+    },
+    {
+      icon: 'account_tree',
+      title: 'Modular State Flow',
+      desc: 'Structured state management using React Hooks and Context APIs for seamless user interactions.'
+    },
+    {
+      icon: 'palette',
+      title: 'Modern UI & Design Systems',
+      desc: 'Crafting pixel-perfect designs with custom color tokens, smooth dark modes, and micro-animations.'
+    },
+    {
+      icon: 'sync_alt',
+      title: 'API Integration & Data Flow',
+      desc: 'Connecting front-end applications to REST APIs with error handling and smooth loading states.'
     }
-  };
+  ];
 
   return (
-    <section className="py-xl px-md bg-surface reveal">
-      <div className="max-w-container-max mx-auto border border-outline-variant/30 rounded-xl p-xl bg-surface-container-lowest flex flex-col md:flex-row items-center gap-xl hover:shadow-lg transition-shadow duration-500">
+    <section className="py-xl px-md bg-surface reveal" id="metrics">
+      <div className="max-w-container-max mx-auto space-y-xl">
         
-        <div className="flex-1 space-y-md">
+        {/* Header */}
+        <div className="text-center max-w-2xl mx-auto space-y-xs">
+          <span className="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">
+            Engineering Excellence
+          </span>
           <h2 className="font-headline-md text-headline-md font-bold">
-            Open Source Activity
+            Development Impact & Key Metrics
           </h2>
           <p className="font-body-md text-on-surface-variant">
-            Consistently pushing code and contributing to the community. Passionate about maintaining clean version histories.
+            A snapshot of quantitative standards, design consistency, and performance goals driving every project built.
           </p>
-          <div className="flex gap-lg">
-            <div className="text-center group cursor-default">
-              <span className="block font-headline-sm text-headline-sm font-bold text-primary group-hover:scale-110 transition-transform">
-                50+
-              </span>
-              <span className="text-label-sm font-label-sm text-on-surface-variant">
-                Repositories
-              </span>
-            </div>
-            <div className="text-center group cursor-default">
-              <span className="block font-headline-sm text-headline-sm font-bold text-primary group-hover:scale-110 transition-transform">
-                1.2k
-              </span>
-              <span className="text-label-sm font-label-sm text-on-surface-variant">
-                Contributions
-              </span>
-            </div>
-          </div>
         </div>
 
-        {/* Contribution Graph Visual */}
-        <div className="w-full md:w-1/2 bg-surface-container-low p-md rounded-xl border border-outline-variant/20 relative overflow-hidden flex flex-col items-center">
-          <div className="flex gap-[3px] overflow-x-auto w-full max-w-full custom-scrollbar pb-2 justify-center">
-            {contributionGrid.map((week, wIdx) => (
-              <div key={wIdx} className="flex flex-col gap-[3px] shrink-0">
-                {week.map((level, dIdx) => (
-                  <div
-                    key={dIdx}
-                    className={`w-[10px] h-[10px] rounded-[2px] transition-colors duration-300 hover:ring-1 hover:ring-primary ${getLevelColor(level)}`}
-                    title={`${level === 0 ? 'No' : level * 2} contributions`}
-                  />
-                ))}
+        {/* Top 4 Metrics Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+          {metrics.map((item, idx) => (
+            <div 
+              key={idx}
+              className="p-lg bg-surface-container-lowest border border-outline-variant/30 rounded-xl hover:shadow-xl transition-all duration-300 group hover-lift flex flex-col justify-between"
+            >
+              <div className="flex items-center justify-between mb-md">
+                <span className="material-symbols-outlined text-3xl text-primary p-2 bg-primary/10 rounded-lg group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </span>
+                <span className="font-display-lg text-3xl font-extrabold text-primary">
+                  {item.stat}
+                </span>
+              </div>
+              <div>
+                <h3 className="font-headline-sm text-lg font-bold text-on-surface mb-xs">
+                  {item.label}
+                </h3>
+                <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Milestone Pillars Banner */}
+        <div className="border border-outline-variant/30 rounded-xl p-lg bg-surface-container-low">
+          <h3 className="font-headline-sm text-xl font-bold text-on-surface mb-lg text-center md:text-left">
+            Core Development Pillars
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+            {milestones.map((milestone, idx) => (
+              <div key={idx} className="flex gap-md items-start">
+                <div className="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/20 shrink-0 text-primary">
+                  <span className="material-symbols-outlined text-2xl">{milestone.icon}</span>
+                </div>
+                <div>
+                  <h4 className="font-headline-sm text-base font-bold text-on-surface mb-1">
+                    {milestone.title}
+                  </h4>
+                  <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+                    {milestone.desc}
+                  </p>
+                </div>
               </div>
             ))}
-          </div>
-          <div className="flex justify-between items-center w-full max-w-[420px] mt-sm text-[10px] text-on-surface-variant px-1 select-none">
-            <span>Less</span>
-            <div className="flex gap-[3px] items-center">
-              <div className="w-[10px] h-[10px] rounded-[2px] bg-outline-variant/20" />
-              <div className="w-[10px] h-[10px] rounded-[2px] bg-secondary-fixed-dim/40" />
-              <div className="w-[10px] h-[10px] rounded-[2px] bg-secondary-fixed-dim/70" />
-              <div className="w-[10px] h-[10px] rounded-[2px] bg-secondary-fixed/90" />
-              <div className="w-[10px] h-[10px] rounded-[2px] bg-primary-container" />
-            </div>
-            <span>More</span>
           </div>
         </div>
 

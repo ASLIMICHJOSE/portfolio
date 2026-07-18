@@ -3,24 +3,24 @@ import React from 'react';
 export default function About() {
   const focusAreas = [
     {
-      icon: 'layers',
-      title: 'UI/UX Development',
-      description: 'Creating pixel-perfect, highly responsive React templates with clean and structured CSS layouts.'
+      icon: 'code',
+      title: 'Frontend Web Development',
+      description: 'Crafting responsive, accessible, and high-performance user interfaces using React, modern JavaScript (ES6+), and Tailwind CSS.'
     },
     {
-      icon: 'widgets',
-      title: 'Component Architecture',
-      description: 'Designing modular, reusable, and testable React component libraries that scale across web applications.'
+      icon: 'web',
+      title: 'Web Application Architecture',
+      description: 'Building scalable web applications with modular component architecture, API integration, and clean state management.'
     },
     {
-      icon: 'account_tree',
-      title: 'State Management',
-      description: 'Handling complex user interactions and local/global application states with React Hooks and Context APIs.'
+      icon: 'devices',
+      title: 'Responsive & Mobile-First Design',
+      description: 'Engineering seamless, adaptive layouts optimized for all device screen sizes, cross-browser compatibility, and user experiences.'
     },
     {
       icon: 'speed',
-      title: 'Web Performance',
-      description: 'Optimizing rendering cycles, minimizing bundle footprint, and auditing for high Lighthouse core vitals.'
+      title: 'Web Performance & Optimization',
+      description: 'Optimizing load times, reducing bundle footprint, auditing Core Web Vitals, and implementing best SEO practices.'
     }
   ];
 

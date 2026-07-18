@@ -25,7 +25,7 @@ export default function Footer() {
           </a>
           <a 
             className="nav-link text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" 
-            href="https://linkedin.com/in/aslimichjose" 
+            href="https://www.linkedin.com/in/asli-mich-jose-844916296/" 
             target="_blank" 
             rel="noopener noreferrer"
           >

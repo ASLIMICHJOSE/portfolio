@@ -79,7 +79,7 @@ export default function Contact() {
             </a>
             
             {/* LinkedIn */}
-            <a className="flex items-center gap-md group cursor-pointer" href="https://linkedin.com/in/aslimichjose" target="_blank" rel="noopener noreferrer">
+            <a className="flex items-center gap-md group cursor-pointer" href="https://www.linkedin.com/in/asli-mich-jose-844916296/" target="_blank" rel="noopener noreferrer">
               <div className="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
                 <span className="material-symbols-outlined">link</span>
               </div>
@@ -88,7 +88,7 @@ export default function Contact() {
                   LinkedIn
                 </h6>
                 <p className="font-body-md text-primary font-bold group-hover:text-primary/70 transition-colors">
-                  linkedin.com/in/aslimichjose
+                  ASLI MICH JOSE
                 </p>
               </div>
             </a>
