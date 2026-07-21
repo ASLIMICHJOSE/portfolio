@@ -2,16 +2,26 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Asli Mich Jose | Full-Stack Developer</title>
+    <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.jpeg" />
+    <title>Asli Mich Jose J | Full-Stack Developer</title>
+    <meta name="description" content="Portfolio of Asli Mich Jose J — Full-Stack Software Engineer specializing in React, Node.js, Express, REST APIs, Databases, and Modern Web Applications." />
     <!-- Google Fonts (Inter) and Google Material Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/portfolio/assets/index-BfbWYLvX.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DzxlozDm.css">
+    <script>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/portfolio/assets/index-DU6TAwSk.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-D9HLymRP.css">
   </head>
   <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
     <div id="root"></div>
