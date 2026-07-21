@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 export default function Certifications() {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [showAll, setShowAll] = useState(false);
 
   const certs = [
     {
@@ -12,11 +13,32 @@ export default function Certifications() {
       pdfUrl: `${import.meta.env.BASE_URL}certificate/Microsoft_Certified_Azure_Fundamentals.pdf`
     },
     {
+      title: 'Career Essentials in Software Development',
+      issuer: 'Microsoft & LinkedIn',
+      category: 'Software & Web',
+      icon: 'developer_mode',
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf`
+    },
+    {
       title: 'Gen-AI Buildathon Training (Genesis 2.0)',
       issuer: 'CapeStart Software & Oliver G Foundation',
       category: 'AI & Machine Learning',
       icon: 'psychology',
       pdfUrl: `${import.meta.env.BASE_URL}certificate/Scanned_20260721-1813.pdf`
+    },
+    {
+      title: 'Student Startup Leadership 2025 (Top 100)',
+      issuer: 'StartupTN & MoE Innovation Cell (Govt of India)',
+      category: 'Leadership',
+      icon: 'military_tech',
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/Scanned_20260721-1815.pdf`
+    },
+    {
+      title: 'Introduction to Data Science',
+      issuer: 'Cognitive Class / IBM',
+      category: 'Data & Analytics',
+      icon: 'database',
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Introduction to Data Science.pdf`
     },
     {
       title: 'Basics of UI/UX Strategy',
@@ -33,32 +55,11 @@ export default function Certifications() {
       pdfUrl: `${import.meta.env.BASE_URL}certificate/Scanned_20260721-1814.pdf`
     },
     {
-      title: 'Student Startup Leadership 2025 (Top 100)',
-      issuer: 'StartupTN & MoE Innovation Cell (Govt of India)',
-      category: 'Leadership',
-      icon: 'military_tech',
-      pdfUrl: `${import.meta.env.BASE_URL}certificate/Scanned_20260721-1815.pdf`
-    },
-    {
-      title: 'Career Essentials in Software Development',
-      issuer: 'Microsoft & LinkedIn',
-      category: 'Software & Web',
-      icon: 'developer_mode',
-      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf`
-    },
-    {
       title: 'Introduction to Career Skills in Software Development',
       issuer: 'Microsoft & LinkedIn',
       category: 'Software & Web',
       icon: 'badge',
       pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Introduction to Career Skills in Software Development (1).pdf`
-    },
-    {
-      title: 'Introduction to Data Science',
-      issuer: 'Cognitive Class / IBM',
-      category: 'Data & Analytics',
-      icon: 'database',
-      pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Introduction to Data Science.pdf`
     },
     {
       title: 'Data Cleaning in Python',
@@ -82,6 +83,13 @@ export default function Certifications() {
     ? certs 
     : certs.filter(cert => cert.category === activeCategory);
 
+  const displayedCerts = showAll ? filteredCerts : filteredCerts.slice(0, 3);
+
+  const handleCategoryChange = (cat) => {
+    setActiveCategory(cat);
+    setShowAll(false);
+  };
+
   return (
     <section className="py-xl px-md max-w-container-max mx-auto reveal" id="certifications">
       <div className="text-center mb-lg">
@@ -101,7 +109,7 @@ export default function Certifications() {
           return (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`px-md py-2 rounded-full font-label-md text-label-md transition-all duration-300 flex items-center gap-xs cursor-pointer ${
                 isActive
                   ? 'bg-primary text-on-primary shadow-md font-bold scale-105'
@@ -121,7 +129,7 @@ export default function Certifications() {
 
       {/* Certificates Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
-        {filteredCerts.map((cert, idx) => (
+        {displayedCerts.map((cert, idx) => (
           <a
             key={idx}
             href={cert.pdfUrl}
@@ -149,6 +157,21 @@ export default function Certifications() {
           </a>
         ))}
       </div>
+
+      {/* View More / Show Less Text Link */}
+      {filteredCerts.length > 3 && (
+        <div className="flex justify-center mt-md">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="text-primary text-sm font-semibold hover:opacity-80 flex items-center gap-1 cursor-pointer transition-opacity"
+          >
+            <span>{showAll ? 'Show Less' : `View All (${filteredCerts.length})`}</span>
+            <span className="material-symbols-outlined text-sm">
+              {showAll ? 'expand_less' : 'expand_more'}
+            </span>
+          </button>
+        </div>
+      )}
     </section>
   );
 }

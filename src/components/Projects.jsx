@@ -3,30 +3,30 @@ import React from 'react';
 export default function Projects() {
   const projects = [
     {
-      title: 'Zyraa — Fashion E-Commerce Platform',
-      tags: ['Full-Stack E-Commerce', 'React', 'REST API Integration', 'Tailwind CSS'],
-      description: 'Modern fashion e-commerce web application featuring state-managed cart workflows, responsive UI grids, mock backend endpoints, and sleek glassmorphism animations.',
+      title: 'SeroFast — Full-Stack E-Commerce Platform',
+      tags: ['Full-Stack E-Commerce', 'React', 'Supabase DB', 'Node.js API'],
+      description: 'Full-stack medical e-commerce marketplace & platform. Features geolocation APIs, autocomplete catalog search, dynamic database schemas, real-time cart state, and vendor workflows.',
       features: [
-        'Minimalist UI & micro-animated interactions',
-        'State-managed cart & checkout slide-over panel',
-        'REST API catalog data fetching and responsive grids'
-      ],
-      image: `${import.meta.env.BASE_URL}assets/images/zyraa.png`,
-      demoUrl: 'https://github.com/ASLIMICHJOSE/Zyraa',
-      githubUrl: 'https://github.com/ASLIMICHJOSE/Zyraa'
-    },
-    {
-      title: 'SeroFast — Medical Platform & Marketplace',
-      tags: ['Full-Stack Web App', 'React', 'Supabase DB', 'Node.js API'],
-      description: 'Full-stack medical e-commerce marketplace & clinical predictor. Features geolocation APIs, autocomplete catalog search, dynamic backend database schemas, and vendor dashboards.',
-      features: [
-        'AI Clinical Symptom Predictor API integration',
+        'Full-stack e-commerce marketplace & cart management',
         'Supabase dynamic relational database & Auth API',
         'Real-time shipping calculation & location geolocation'
       ],
       image: `${import.meta.env.BASE_URL}assets/images/serofast.png`,
-      demoUrl: 'https://github.com/ASLIMICHJOSE/SeroFast',
+      demoUrl: 'https://www.serofast.com',
       githubUrl: 'https://github.com/ASLIMICHJOSE/SeroFast'
+    },
+    {
+      title: 'Zyraa — Fashion Website (First Project)',
+      tags: ['Frontend Learning', 'HTML5', 'CSS3', 'JavaScript'],
+      description: 'First frontend learning project building a responsive fashion website showcase layout with custom navigation drawer and clean layout design.',
+      features: [
+        'Responsive layout and mobile navigation drawer',
+        'Product showcase & layout design',
+        'Clean, foundational UI styling with CSS'
+      ],
+      image: `${import.meta.env.BASE_URL}assets/images/zyraa.png`,
+      demoUrl: 'https://aslimichjose.github.io/Zyraaa/',
+      githubUrl: 'https://github.com/ASLIMICHJOSE/Zyraaa.git'
     },
     {
       title: 'AI Career Guidance System',
@@ -102,26 +102,6 @@ export default function Projects() {
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
                 src={project.image}
               />
-              <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-md">
-                <a 
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-surface p-base rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center"
-                  aria-label="Live Demo Link"
-                >
-                  <span className="material-symbols-outlined text-primary">link</span>
-                </a>
-                <a 
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-surface p-base rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center"
-                  aria-label="GitHub Code Link"
-                >
-                  <span className="material-symbols-outlined text-primary">code</span>
-                </a>
-              </div>
             </div>
 
             <div className="p-md flex-1 flex flex-col">
