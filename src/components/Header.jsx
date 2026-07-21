@@ -48,8 +48,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-colors duration-300">
       <div className="flex justify-between items-center max-w-container-max mx-auto px-md h-16">
-        <a className="font-headline-sm text-headline-sm font-bold text-primary tracking-tight" href="#home" onClick={(e) => handleNavClick(e, 'home')}>
-          Asli Mich Jose J
+        <a className="font-headline-sm text-headline-sm font-bold text-primary tracking-tight flex items-center gap-sm group" href="#home" onClick={(e) => handleNavClick(e, 'home')}>
+          <img 
+            src={`${import.meta.env.BASE_URL}favicon.jpeg`} 
+            alt="Asli Mich Jose Logo" 
+            className="w-9 h-9 rounded-full object-cover border-2 border-primary/40 group-hover:border-primary shadow-sm transition-all group-hover:scale-105"
+          />
+          <span>Asli Mich Jose J</span>
         </a>
 
         {/* Desktop Nav */}

@@ -3,24 +3,24 @@ import React from 'react';
 export default function About() {
   const focusAreas = [
     {
+      icon: 'layers',
+      title: 'Full-Stack Web Development',
+      description: 'Building end-to-end web applications with React on the frontend, Node.js/Express on the backend, and seamless data synchronization.'
+    },
+    {
+      icon: 'dns',
+      title: 'Backend & RESTful APIs',
+      description: 'Architecting modular backend microservices, RESTful API endpoints, database schemas (PostgreSQL, MongoDB, Supabase), and authentication.'
+    },
+    {
       icon: 'code',
-      title: 'Frontend Web Development',
-      description: 'Crafting responsive, accessible, and high-performance user interfaces using React, modern JavaScript (ES6+), and Tailwind CSS.'
+      title: 'Frontend & Responsive UI',
+      description: 'Crafting pixel-perfect, accessible, and interactive user interfaces using React, modern JavaScript/TypeScript, and Tailwind CSS.'
     },
     {
-      icon: 'web',
-      title: 'Web Application Architecture',
-      description: 'Building scalable web applications with modular component architecture, API integration, and clean state management.'
-    },
-    {
-      icon: 'devices',
-      title: 'Responsive & Mobile-First Design',
-      description: 'Engineering seamless, adaptive layouts optimized for all device screen sizes, cross-browser compatibility, and user experiences.'
-    },
-    {
-      icon: 'speed',
-      title: 'Web Performance & Optimization',
-      description: 'Optimizing load times, reducing bundle footprint, auditing Core Web Vitals, and implementing best SEO practices.'
+      icon: 'cloud_sync',
+      title: 'Cloud & System Performance',
+      description: 'Optimizing database query execution, client-server payload sizes, Core Web Vitals, and deploying to cloud environments like Azure.'
     }
   ];
 

@@ -4,22 +4,22 @@ export default function Timeline() {
   const experiences = [
     {
       period: 'July 2025 - Present',
-      title: 'Front-End Developer Intern',
+      title: 'Full-Stack Software Engineering Intern',
       company: 'Iniram Square Pvt. Ltd.',
       bullets: [
-        'Developing responsive admin consoles and real-time business diagnostics applications with React and Tailwind CSS.',
-        'Optimizing client-side loading times and asset bundling, achieving a 35% improvement in initial page speeds.',
-        'Collaborating with system architects to bridge ML backend endpoints (object detection, NLP) to client interfaces.',
-        'Participating in automated quality control workflows and component-driven unit testing pipelines.'
+        'Engineering end-to-end web applications, admin consoles, and real-time business diagnostic tools using React, Node.js, and Tailwind CSS.',
+        'Architecting REST API endpoints and data pipelines, achieving seamless data synchronization and a 35% improvement in load speeds.',
+        'Connecting computer vision and NLP machine learning backend services to intuitive client dashboard interfaces.',
+        'Participating in automated code review, backend API integration testing, and quality control workflows.'
       ]
     },
     {
       period: '2024 - 2025',
-      title: 'Personal Project Developer',
+      title: 'Full-Stack Project Developer',
       company: 'Self-Employed',
       bullets: [
-        'Building and shipping independent full-stack applications with modern tech stacks, focusing on UI/UX and system architecture.',
-        'Implementing real-time computer vision detection models and medical e-commerce systems.'
+        'Building and shipping independent full-stack applications with modern tech stacks, focusing on scalable system architecture and database design.',
+        'Implementing real-time computer vision detection microservices and medical e-commerce backend systems with Supabase & Node.js.'
       ]
     }
   ];

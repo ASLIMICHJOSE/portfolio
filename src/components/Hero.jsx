@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 export default function Hero() {
   const roles = [
-    "Building interactive, pixel-perfect user interfaces.",
-    "Creating modern web applications with React & Tailwind.",
-    "Optimizing client-side rendering & load performance."
+    "Building scalable end-to-end full-stack web applications.",
+    "Crafting interactive React interfaces backed by Node.js APIs.",
+    "Architecting RESTful services, database schemas & cloud solutions."
   ];
 
   const [text, setText] = useState('');
@@ -22,7 +22,7 @@ export default function Hero() {
     } else {
       timer = setTimeout(() => {
         setText(currentRole.substring(0, text.length + 1));
-      }, 50);
+      }, 40);
     }
 
     if (!isDeleting && text === currentRole) {
@@ -48,10 +48,10 @@ export default function Hero() {
   };
 
   const badges = [
-    { text: 'React Developer', color: 'bg-sky-100 text-sky-800 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800/50' },
-    { text: 'Frontend Specialist', color: 'bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800/50' },
-    { text: 'Tailwind Expert', color: 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800/50' },
-    { text: 'UI/UX Builder', color: 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/50' }
+    { text: 'Full-Stack Developer', color: 'bg-sky-100 text-sky-800 border-sky-200 dark:bg-sky-950/60 dark:text-sky-300 dark:border-sky-800/50' },
+    { text: 'React & Node.js', color: 'bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-950/60 dark:text-purple-300 dark:border-purple-800/50' },
+    { text: 'REST APIs & Databases', color: 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-950/60 dark:text-emerald-300 dark:border-emerald-800/50' },
+    { text: 'UI/UX & Cloud Solutions', color: 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-950/60 dark:text-amber-300 dark:border-amber-800/50' }
   ];
 
   return (
@@ -71,7 +71,7 @@ export default function Hero() {
           ))}
         </div>
         <p className="font-label-md text-label-md text-secondary uppercase tracking-widest font-bold">
-          Front-End Developer
+          Full-Stack Software Engineer
         </p>
         <h1 className="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight">
           Hello, I'm <span className="text-primary font-bold">Asli Mich Jose J</span>.
@@ -86,7 +86,7 @@ export default function Hero() {
         </div>
 
         <p className="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
-          I build responsive, robust, and beautifully engineered user interfaces. Passionate about creating seamless user experiences through clean code.
+          I engineer complete end-to-end web applications—combining responsive, pixel-perfect user interfaces with robust backend architectures, RESTful APIs, and databases.
         </p>
         <div className="flex flex-wrap gap-md pt-base">
           <a 

@@ -3,26 +3,26 @@ import React from 'react';
 export default function Projects() {
   const projects = [
     {
-      title: 'Zyraa — Fashion E-Commerce',
-      tags: ['Front-End', 'React', 'Tailwind CSS'],
-      description: 'Modern fashion e-commerce platform featuring a pixel-perfect responsive UI, clean component architecture, and focus on clean typography and rich aesthetics.',
+      title: 'Zyraa — Fashion E-Commerce Platform',
+      tags: ['Full-Stack E-Commerce', 'React', 'REST API Integration', 'Tailwind CSS'],
+      description: 'Modern fashion e-commerce web application featuring state-managed cart workflows, responsive UI grids, mock backend endpoints, and sleek glassmorphism animations.',
       features: [
-        'Minimalist, glassmorphism UI & micro-animations',
-        'Fully responsive item catalog grids',
-        'Interactive state-managed shopping bag slide-over'
+        'Minimalist UI & micro-animated interactions',
+        'State-managed cart & checkout slide-over panel',
+        'REST API catalog data fetching and responsive grids'
       ],
       image: `${import.meta.env.BASE_URL}assets/images/zyraa.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/Zyraa',
       githubUrl: 'https://github.com/ASLIMICHJOSE/Zyraa'
     },
     {
-      title: 'SeroFast — Medical E-Commerce & Platform',
-      tags: ['Full-Stack Web App', 'React', 'Supabase'],
-      description: 'Full-stack medical e-commerce marketplace & clinical predictor. Features geolocation APIs, autocomplete catalog search, dynamic delivery estimates, and vendor dashboards.',
+      title: 'SeroFast — Medical Platform & Marketplace',
+      tags: ['Full-Stack Web App', 'React', 'Supabase DB', 'Node.js API'],
+      description: 'Full-stack medical e-commerce marketplace & clinical predictor. Features geolocation APIs, autocomplete catalog search, dynamic backend database schemas, and vendor dashboards.',
       features: [
-        'AI Clinical Symptom Predictor API',
-        'Supabase dynamic backend and authentication',
-        'Real-time shipping estimates and geolocation integration'
+        'AI Clinical Symptom Predictor API integration',
+        'Supabase dynamic relational database & Auth API',
+        'Real-time shipping calculation & location geolocation'
       ],
       image: `${import.meta.env.BASE_URL}assets/images/serofast.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/SeroFast',
@@ -30,25 +30,25 @@ export default function Projects() {
     },
     {
       title: 'AI Career Guidance System',
-      tags: ['AI Web App', 'TensorFlow', 'JavaScript'],
-      description: 'Smart career advisor featuring automatic skill-gap analysis, personalized learning paths, and AI-driven job profile recommendations.',
+      tags: ['Full-Stack AI App', 'TensorFlow', 'Node.js', 'React'],
+      description: 'Smart career advisor app featuring automatic skill-gap analysis, personalized learning paths, backend recommendation logic, and job profile matching engines.',
       features: [
-        'TensorFlow-driven client-side recommendations',
-        'Interactive skill trees and progress meters',
-        'Automated job-role requirement mapping engine'
+        'TensorFlow-driven client/server recommendations',
+        'Interactive skill trees and progress analytics',
+        'Automated job requirement mapping engine'
       ],
       image: `${import.meta.env.BASE_URL}assets/images/career_guidance.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/AI-Career-Guidance-System',
       githubUrl: 'https://github.com/ASLIMICHJOSE/AI-Career-Guidance-System'
     },
     {
-      title: 'Fitness Trainer Website',
-      tags: ['Front-End', 'HTML & CSS', 'JavaScript'],
-      description: 'A clean fitness platform incorporating personal trainer profiles, interactive booking schedules, and client contact systems.',
+      title: 'Fitness Trainer Booking Platform',
+      tags: ['Full-Stack App', 'JavaScript', 'HTML5 & CSS3', 'Form Backend'],
+      description: 'A clean fitness platform incorporating personal trainer profiles, interactive booking schedules, client onboarding forms, and backend mail notification triggers.',
       features: [
         'Integrated training session scheduling calendar',
-        'Onboarding client sign-up registration forms',
-        'Responsive layout optimized for multiple device sizes'
+        'Onboarding sign-up & automated contact backend',
+        'Fully adaptive layout optimized across mobile & desktop'
       ],
       image: `${import.meta.env.BASE_URL}assets/images/fitness_trainer.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/Fitness-Trainer-Website',
@@ -56,12 +56,12 @@ export default function Projects() {
     },
     {
       title: 'AI Object Detection & Distance Measurement',
-      tags: ['Computer Vision', 'Python', 'YOLOv8'],
-      description: 'Real-time AI model that detects objects and measures the distance between the camera and detected targets using computer vision geometry.',
+      tags: ['AI Computer Vision', 'Python API', 'YOLOv8', 'OpenCV'],
+      description: 'Real-time AI application that detects objects and measures target distance using computer vision camera geometry and custom python microservices.',
       features: [
         'YOLOv8 Object Detection and Classification',
         'Focal length camera calibration algorithm',
-        'Real-time distance calculation in meters'
+        'Real-time distance metrics & spatial analysis'
       ],
       image: `${import.meta.env.BASE_URL}assets/images/object_detection.png`,
       demoUrl: 'https://github.com/ASLIMICHJOSE/AI-Object-Detection-Distance-Measurement',
