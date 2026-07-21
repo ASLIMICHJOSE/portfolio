@@ -12,16 +12,44 @@ export default function Certifications() {
       pdfUrl: `${import.meta.env.BASE_URL}certificate/Microsoft_Certified_Azure_Fundamentals.pdf`
     },
     {
+      title: 'Gen-AI Buildathon Training (Genesis 2.0)',
+      issuer: 'CapeStart Software & Oliver G Foundation',
+      category: 'AI & Machine Learning',
+      icon: 'psychology',
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/Scanned_20260721-1813.pdf`
+    },
+    {
+      title: 'Basics of UI/UX Strategy',
+      issuer: 'UniAthena & Cambridge International, UK',
+      category: 'Software & Web',
+      icon: 'design_services',
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/Asli Mich_CR1404_certificate.pdf`
+    },
+    {
+      title: 'Web Designing — Techie\'s Carnival 2025',
+      issuer: 'Inbox Info Solutions',
+      category: 'Software & Web',
+      icon: 'web',
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/Scanned_20260721-1814.pdf`
+    },
+    {
+      title: 'Student Startup Leadership 2025 (Top 100)',
+      issuer: 'StartupTN & MoE Innovation Cell (Govt of India)',
+      category: 'Leadership',
+      icon: 'military_tech',
+      pdfUrl: `${import.meta.env.BASE_URL}certificate/Scanned_20260721-1815.pdf`
+    },
+    {
       title: 'Career Essentials in Software Development',
       issuer: 'Microsoft & LinkedIn',
-      category: 'Software Development',
+      category: 'Software & Web',
       icon: 'developer_mode',
       pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Career Essentials in Software Development by Microsoft and LinkedIn.pdf`
     },
     {
       title: 'Introduction to Career Skills in Software Development',
       issuer: 'Microsoft & LinkedIn',
-      category: 'Software Development',
+      category: 'Software & Web',
       icon: 'badge',
       pdfUrl: `${import.meta.env.BASE_URL}certificate/CertificateOfCompletion_Introduction to Career Skills in Software Development (1).pdf`
     },
@@ -48,7 +76,7 @@ export default function Certifications() {
     }
   ];
 
-  const categories = ['All', 'Cloud & Azure', 'Software Development', 'Data & Analytics'];
+  const categories = ['All', 'Software & Web', 'AI & Machine Learning', 'Cloud & Azure', 'Data & Analytics', 'Leadership'];
 
   const filteredCerts = activeCategory === 'All' 
     ? certs 
